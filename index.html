@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>For My Baby ❤️</title>
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      background: #fff0f5;
+      font-family: 'Merriweather', serif;
+      font-weight: 600;
+      text-align: center;
+      padding: 2rem;
+      color: #333;
+      overflow: hidden;
+    }
+    h1 {
+      color: #e63946;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+    .love-letter {
+      background: #ffffff;
+      padding: 1.5rem;
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      max-width: 700px;
+      margin: 2rem auto;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #444;
+    }
+    .photo {
+      margin: 2rem auto;
+    }
+    .photo img {
+      max-width: 100%;
+      border-radius: 20px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
+    }
+    button {
+      background-color: #ff6b81;
+      color: white;
+      border: none;
+      padding: 0.8rem 1.5rem;
+      border-radius: 10px;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+    .compliment {
+      margin-top: 1.5rem;
+      font-weight: bold;
+      color: #6a4c93;
+    }
+    .footer {
+      margin-top: 3rem;
+      font-size: 0.9rem;
+      color: #999;
+    }
+    .heart {
+      position: fixed;
+      top: -10px;
+      width: 20px;
+      height: 20px;
+      background: red;
+      transform: rotate(45deg);
+      animation: float 10s linear infinite;
+    }
+    .heart::before,
+    .heart::after {
+      content: '';
+      position: absolute;
+      width: 20px;
+      height: 20px;
+      background: red;
+      border-radius: 50%;
+    }
+    .heart::before {
+      top: -10px;
+      left: 0;
+    }
+    .heart::after {
+      left: -10px;
+      top: 0;
+    }
+    @keyframes float {
+      0% {
+        transform: translateY(0) rotate(45deg);
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-100vh) rotate(45deg);
+        opacity: 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h1>Hey baby </h1>
+
+  <div class="photo">
+    <img src="WhatsApp%20Image%202025-04-25%20at%2002.58.15_896a77a0.jpg" alt="Us">
+  </div>
+
+  <div class="love-letter">
+    <p>You know I believe in destiny baby, and if you don't know, I completely believe you are mine... Like my everything, literally. Not a minute goes by without me thinking how much I want to be with you... how badly I wanna snuggle into you, keep you in bed all day and night... feel all your kisses and hugs and everything else in between, but mostly see you happy the way you're only when you're with me.</p>
+
+    <p>No amount of times of me saying this can be enough because I'll never stop falling for you and that is something I can bet you on... The man that you are, I not only love and care about you the most, I respect you the most too... There's nothing in this world that I wouldn't do for you, if I could, baby, I would literally make sure there is nothing that you ever even have to lift a finger for.</p>
+
+    <p>I love you meri jaan, I always will, forever and ever (at least till I take my last breath).
+    </p>
+  </div>
+
+  <button onclick="showCompliment()">Click me please </button>
+  <div class="compliment" id="complimentBox"></div>
+
+  <div class="footer">
+    Made with all my heart for you, baby ❤️
+  </div>
+
+  <script>
+    const compliments = [
+      "You're the semicolon to my code—totally essential.",
+      "You are the reason my heart beats so fast",
+      "If I had a penny for everytime I asked bhagwanji to keep you in my life -trust me, by now we'd have a whole city on our name.",
+      "You are the sole reason my hert believes it can still be loved, even with the flaws",
+      "You my love, are the most handsome, adorable, sweetest and sexiest man to have ever existed irl.",
+      "You are my raison d'être."
+    ];
+
+    function showCompliment() {
+      const random = Math.floor(Math.random() * compliments.length);
+      document.getElementById('complimentBox').innerText = compliments[random];
+    }
+
+    function createHeart() {
+      const heart = document.createElement('div');
+      heart.className = 'heart';
+      heart.style.left = Math.random() * 100 + 'vw';
+      heart.style.animationDuration = 5 + Math.random() * 5 + 's';
+      document.body.appendChild(heart);
+      setTimeout(() => heart.remove(), 10000);
+    }
+
+    setInterval(createHeart, 300);
+  </script>
+</body>
+</html>
